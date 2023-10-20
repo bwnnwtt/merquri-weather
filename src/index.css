@@ -1,3 +1,13 @@
+:root {
+  --search-button-light: rgba(108,65,180,255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +15,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./assets/bg-light.png');
+  background-attachment: fixed;
+  background-size: cover;
+  font-size: 62.5%;
 }
 
 code {

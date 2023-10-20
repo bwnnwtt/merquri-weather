@@ -2,37 +2,134 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+div.search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  width: calc(25rem + 0.8rem + 2rem);
+  margin: 0 auto;
+  
+  height: 2rem;
+  /* width: calc(25rem + 1.2rem + 0.8rem + 2rem); */
+  /* margin: 0 auto; */
+  margin-top: 2rem;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  > input.search-input {
+    font-size: inherit;
+    width: 25rem;
+    display: inline-block;
+    background-color: rgba(255,255,255,0.35);
+    border: none;
+    border-radius: 0.7rem;
+    padding: 0.5rem 0.6rem;
+    height: inherit;
+
+    &.focus::placeholder {
+      color: transparent;
+    }
+
+  }
+
+  > input.search-input:focus-visible {
+    outline: none;
+  }
+
+  > label.search-label {
+    position: relative;
+    pointer-events: none;
+    left: 0.6rem;
+    width: 0px;
+    font-size: 6px;
+    color: grey;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    &.focus {
+      opacity: 1;
+    }
+  }
+
+  /* > label.search-label + input.search-input:focus {
+    opacity: 1;
+  } */
+
+  > .search-button {
+    display: inline-block;
+    height: inherit;
+    width: 2rem;
+    background-color: var(--search-button-light);
+    border: none;
+    border-radius: 0.7rem;
+    margin-left: 0.8rem;
+
+    > span {
+      display: inline-block;
+      color: white;
+      font-size: 1.2rem;
+    }
+  }
+
+  > .search-button:hover {
+    cursor: pointer;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' -25,
+  'opsz' 8
+}
+
+div.weather-container {
+  /* 
+    background-color same as search input 
+  */
+  position: relative;
+  background-color: rgba(255,255,255,0.35);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: calc(25rem + 0.8rem + 2rem);
+  margin: 0 auto;
+  margin-top: 3.5rem;
+  border-radius: 0.7rem;
+  border: 0.5px solid rgba(255,255,255,0.35);
+
+  > * {
+    /* 
+    width = 
+    search bar width + 
+    search button margin left + 
+    search button width  
+    */
+    width: calc(25rem + 0.8rem + 2rem);
+    padding: 0 1rem;
+    text-align: left;
+  }
+
+  > :first-child {
+    margin-top: 1rem;
+  }
+
+  > :last-child {
+    margin-bottom: 1rem;
+  }
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div.weather-container::before {
+  content: "";
+  position: absolute;
+  top: -2.5rem;;
+  left: 68%;
+  width: 128px;
+  height: 128px;
+  background-image: url('./assets/sun.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center top; */
+  /* left: 68%;
+  top: -1rem; */
 }
