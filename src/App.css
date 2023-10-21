@@ -34,6 +34,7 @@ div.search-container {
     position: relative;
     pointer-events: none;
     left: 1.1rem;
+    top: 0.3rem;
     width: 0;
     font-size: 0.8rem;
     color: grey;
@@ -64,6 +65,37 @@ div.search-container {
   > .search-button:hover {
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: calc(14rem + 1rem + 2rem);
+    margin: 2rem auto;
+
+    > input.search-input {
+      width: 12rem;
+    }
+
+    > .search-button {
+      display: inline-block;
+      height: 3.5rem;
+      width: 3.5rem;
+      background-color: var(--search-button-light);
+      border: none;
+      border-radius: 0.7rem;
+      margin-left: 0.8rem;
+  
+      > span {
+        display: inline-block;
+        color: white;
+        font-size: 2rem;
+      }
+    }
+
+    > label.search-label {
+      left: 1.3rem;
+    }
+
+  }
+
 }
 
 .material-symbols-outlined {
@@ -102,16 +134,25 @@ div.weather-container {
     text-align: left;
   }
 
-  > :first-child {
+  > :nth-child(2) {
     margin-top: 2rem;
   }
 
   > :last-child {
     margin-bottom: 2rem;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: calc(14rem + 1rem + 2rem);
+    margin-top: 3.5rem;
+
+    > :nth-child(2) {
+      margin-top: 1rem;
+    }
+  }
 }
 
-div.weather-container::before {
+div.weather-image {
   content: "";
   position: absolute;
   top: -5rem;;
@@ -121,9 +162,13 @@ div.weather-container::before {
   background-image: url('./assets/sun.png');
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-position: center top; */
-  /* left: 68%;
-  top: -1rem; */
+
+  @media screen and (max-width: 768px) {
+    width: 128px;
+    height: 128px;
+    left: 48%;
+    top: -2.5rem;
+  }
 }
 
 div.weather-display-no-result
@@ -138,6 +183,32 @@ div.weather-display-no-result
     margin-top: 0.3rem;
     font-size: 1.4rem;
     color: rgba(0,0,0,0.4)
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: calc(14rem + 1rem + 2rem);
+    padding: 0 1rem;
+    font-size: 0.5rem;
+    margin-bottom: 4.6rem;
+
+    > h1 {
+      margin-top: 0.1rem;
+    }
+
+    > h2 {
+      display: inline-block;
+      width: 7rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+div.weather-display-result {
+  @media only screen and (max-width: 768px) {
+    display: inline-block;
+    width: calc(14rem + 1rem + 2rem);
+    padding: 0 1rem;
+    margin-top: 1.5rem;
   }
 }
 
@@ -154,6 +225,19 @@ div.weather-display-main {
     color: grey;
     margin-top: 0.3rem;
   }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+
+    > h1 {
+      font-size: 3rem;
+    }
+
+    > h3 {
+      font-size: 0.8rem;
+    }
+  }
 }
 
 div.weather-display-side {
@@ -166,6 +250,23 @@ div.weather-display-side {
   top: -1rem;
   justify-content: space-between;
   flex-direction: row-reverse;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 0.8rem;
+    flex-direction: column;
+    text-align: right;
+    width: 8rem;
+    left: 45%;
+    top: -2.7rem;
+
+    > h1 {
+      font-size: 3rem;
+    }
+
+    > h3 {
+      font-size: 0.8rem;
+    }
+  }
 }
 
 div.search-history-container {
@@ -181,6 +282,15 @@ div.search-history-container {
 
   > p {
     margin: 1rem 0;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: calc(12rem + 1rem + 2rem);
+
+    > * {
+      padding: 0 1rem;
+      font-size: 0.8rem;
+    }
   }
 }
 
@@ -198,6 +308,15 @@ div.search-history-item-container {
 
   > button:hover {
     cursor: pointer;
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+    margin: 1rem auto;
+    width: 13rem;
+    font-size: 0.7rem;
+    height: 3.5rem;
+    white-space: nowrap;
   }
 }
 
@@ -232,5 +351,54 @@ div.search-history-item-right {
     &:hover {
       cursor: pointer;
     }
+  }
+
+  @media only screen and (max-width: 768px) {
+    position: relative;
+    left: 70%;
+
+    > * {
+      margin-left: 0.3rem;
+    }
+  
+    > .history-button {
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 1.4rem;
+      border: none;
+      align-items: center;
+  
+      > .icon-wrapper {
+        > span {
+          color: grey;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+div.search-history-item-datetime {
+  position: absolute;
+  left: 65%;
+
+  @media only screen and (max-width: 768px) {
+    position: relative;
+    display: inline;
+    width: 6rem;
+    left: -63%;
+    top: 2rem;
+    font-size: 0.6rem;
+  }
+}
+
+div.search-history-item-city {
+  @media only screen and (max-width: 768px) {
+    position: relative;
+    display: inline-block;
+    width: 7rem;
+    left: 0;
+    top: 1rem;
   }
 }

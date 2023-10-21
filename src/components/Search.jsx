@@ -26,7 +26,7 @@ const Search = ({handleSearch, handleSearchChange, search}) => {
         className={`${isFocus ? 'search-input focus' : 'search-input'}`}
         type="text"
         id="search" 
-        placeholder="Enter country or city..."
+        placeholder="Enter country..."
         value={search}
         onChange={handleSearchChange}
         onFocus={handleFocus}

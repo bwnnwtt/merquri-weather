@@ -5,13 +5,14 @@ const SearchHistory = ({ history, handleHistorySearch, handleHistoryDelete }) =>
       {
         history.map((obj, i) => (
           <div key={i} className="search-history-item-container">
-            <div>
+            <div className="search-history-item-city">
               {obj.name}&#44;&nbsp;{obj.sys?.country}
             </div>
-            <div className="search-history-item-right">
-              <div>
+            <div className="search-history-item-datetime">
                 {obj.datetime}
               </div>
+            <div className="search-history-item-right">
+              
               <button 
                 className="history-button"
                 onClick={() => {handleHistorySearch(obj)}}

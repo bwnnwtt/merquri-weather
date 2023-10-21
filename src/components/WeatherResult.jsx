@@ -12,7 +12,7 @@ const WeatherResult = ({ result, weather }) => {
   )
     
   return (
-    <div>
+    <div className="weather-display-result">
       <div className="weather-display-main">
         <p>Today's Weather</p>
         <h1>{Math.round(weather.main?.temp)}&deg;</h1>
