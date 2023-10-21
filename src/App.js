@@ -52,16 +52,7 @@ function App() {
         handleSearch={handleSearch}
       />
       <Weather>
-        <div>
-          abc
-        </div>
         <WeatherResult result={result}/>
-        <div>
-          def
-        </div>
-        <div>
-          xyz
-        </div>
       </Weather>
     </div>
   );

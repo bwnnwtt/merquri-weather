@@ -133,3 +133,30 @@ div.weather-container::before {
   /* left: 68%;
   top: -1rem; */
 }
+
+div.weather-display-main {
+  font-size: 0.45rem;
+  font-weight: 500;
+  line-height: 1;
+  > h1 {
+    color: var(--search-button-light);
+    font-size: 3rem;
+  }
+  > h3 {
+    font-size: 0.5rem;
+    color: grey;
+    margin-top: 0.3rem;
+  }
+}
+
+div.weather-display-side {
+  color: grey;
+  display: flex;
+  width: 20rem;
+  position: relative;
+  font-size: 0.5rem;
+  left: 5rem;
+  top: -0.55rem;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
