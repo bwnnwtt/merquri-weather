@@ -42,10 +42,8 @@ function App() {
                               .replace(' ', '')
                               .toLowerCase()
 
-      console.log(formattedDate, formattedTime)
       data.datetime = `${formattedDate} ${formattedTime}`;
 
-      console.log(data)
       setWeather(data)
     }
 
@@ -83,8 +81,6 @@ function App() {
       }
     
       const data = await response.json()
-
-      console.log(data)
     
       setCountries(data)
     }
@@ -102,7 +98,6 @@ function App() {
 
   const handleSearch = (e) => {
     let filteredResult = countries.filter(e => String(e.name.common).toLowerCase() === search.toLowerCase())[0]
-    console.log(filteredResult)
     filteredResult ? setResult(filteredResult) : setResult({})
   }
 

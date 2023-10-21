@@ -12,7 +12,6 @@ const SearchHistory = ({ history, handleHistorySearch, handleHistoryDelete }) =>
                 {obj.datetime}
               </div>
             <div className="search-history-item-right">
-              
               <button 
                 className="history-button"
                 onClick={() => {handleHistorySearch(obj)}}
