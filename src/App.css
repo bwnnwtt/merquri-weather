@@ -355,7 +355,9 @@ div.search-history-item-right {
 
   @media only screen and (max-width: 768px) {
     position: relative;
-    left: 70%;
+    display: inline-block;
+    left: -50%;
+    top: 1rem;
 
     > * {
       margin-left: 0.3rem;
@@ -365,7 +367,7 @@ div.search-history-item-right {
       display: inline-block;
       width: 1.5rem;
       height: 1.5rem;
-      border-radius: 1.4rem;
+      border-radius: 1.5rem;
       border: none;
       align-items: center;
   
@@ -387,8 +389,8 @@ div.search-history-item-datetime {
     position: relative;
     display: inline;
     width: 6rem;
-    left: -63%;
-    top: 2rem;
+    left: -64%;
+    top: 1.2rem;
     font-size: 0.6rem;
   }
 }
@@ -399,6 +401,7 @@ div.search-history-item-city {
     display: inline-block;
     width: 7rem;
     left: 0;
-    top: 1rem;
+    top: 0.4rem;
+    font-size: 0.8rem;
   }
 }
