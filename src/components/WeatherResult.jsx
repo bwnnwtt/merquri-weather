@@ -21,7 +21,7 @@ const WeatherResult = ({ result, weather }) => {
             H:&nbsp;{Math.round(weather.main?.temp_max)}&deg;&nbsp;
           </span>
           <span>
-            L:&nbsp;{Math.round(weather.main?.temp_max)}&deg;&nbsp;
+            L:&nbsp;{Math.round(weather.main?.temp_min)}&deg;&nbsp;
           </span>
         </p>
         <h3>{weather.name}&#44;&nbsp;{weather.sys?.country}</h3>
