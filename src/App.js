@@ -32,7 +32,13 @@ function App() {
       const date = new Date(data.dt * 1000)
       const formattedDate = formatDate(date)
       const formattedTime = date
-                              .toLocaleTimeString()
+                              .toLocaleTimeString(
+                                  undefined, 
+                                  { 
+                                    hour: '2-digit', 
+                                    minute:'2-digit'
+                                  }
+                                )
                               .replace(' ', '')
                               .toLowerCase()
 
