@@ -74,27 +74,6 @@ function App() {
     }
   }, [history])
 
-  const handleSearchChange = (e) => {
-    setSearch(e.target.value)
-  }
-
-  const handleSearch = (e) => {
-    let filteredResult = countries.filter(e => String(e.name.common).toLowerCase() === search.toLowerCase())[0]
-    console.log(filteredResult)
-    // console.log(filteredResults[0])
-    filteredResult ? setResult(filteredResult) : setResult({})
-    // console.log(result)
-  }
-
-  const handleHistorySearch = (obj) => {
-    setWeather(obj)
-  }
-
-  const handleHistoryDelete = (id) => {
-    const newHistory = history.filter(o => o.id !== id)
-    setHistory(newHistory)
-  }
-
   useEffect(() => {
     const fetchCountries = async() => {
       const response = await fetch('https://restcountries.com/v3.1/all')
@@ -116,6 +95,25 @@ function App() {
       console.error(err)
     }
   }, [])
+
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value)
+  }
+
+  const handleSearch = (e) => {
+    let filteredResult = countries.filter(e => String(e.name.common).toLowerCase() === search.toLowerCase())[0]
+    console.log(filteredResult)
+    filteredResult ? setResult(filteredResult) : setResult({})
+  }
+
+  const handleHistorySearch = (obj) => {
+    setWeather(obj)
+  }
+
+  const handleHistoryDelete = (id) => {
+    const newHistory = history.filter(o => o.id !== id)
+    setHistory(newHistory)
+  }
 
   return (
     <div className="App">

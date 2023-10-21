@@ -6,23 +6,19 @@ div.search-container {
   display: flex;
   flex-direction: row;
   justify-content:space-between;
-  width: calc(25rem + 0.8rem + 2rem);
+  width: calc(50rem + 1.6rem + 3rem);
   margin: 0 auto;
-  
-  height: 2rem;
-  /* width: calc(25rem + 1.2rem + 0.8rem + 2rem); */
-  /* margin: 0 auto; */
-  margin-top: 2rem;
+  margin-top: 3rem;
 
   > input.search-input {
-    font-size: inherit;
-    width: 25rem;
+    font-size: 1rem;
+    width: 50rem;
+    height: 3.5rem;
     display: inline-block;
     background-color: rgba(255,255,255,0.35);
     border: none;
     border-radius: 0.7rem;
-    padding: 0.5rem 0.6rem;
-    height: inherit;
+    padding: 1rem;
 
     &.focus::placeholder {
       color: transparent;
@@ -37,9 +33,9 @@ div.search-container {
   > label.search-label {
     position: relative;
     pointer-events: none;
-    left: 0.6rem;
-    width: 0px;
-    font-size: 6px;
+    left: 1.1rem;
+    width: 0;
+    font-size: 0.8rem;
     color: grey;
     opacity: 0;
     transition: opacity 0.2s;
@@ -49,14 +45,10 @@ div.search-container {
     }
   }
 
-  /* > label.search-label + input.search-input:focus {
-    opacity: 1;
-  } */
-
   > .search-button {
     display: inline-block;
-    height: inherit;
-    width: 2rem;
+    height: 3.5rem;
+    width: 3.5rem;
     background-color: var(--search-button-light);
     border: none;
     border-radius: 0.7rem;
@@ -65,7 +57,7 @@ div.search-container {
     > span {
       display: inline-block;
       color: white;
-      font-size: 1.2rem;
+      font-size: 2rem;
     }
   }
 
@@ -87,16 +79,16 @@ div.weather-container {
     background-color same as search input 
   */
   position: relative;
-  background-color: rgba(255,255,255,0.35);
+  background-color: rgba(255,255,255,0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: calc(25rem + 0.8rem + 2rem);
+  width: calc(50rem + 1.6rem + 3rem);
   margin: 0 auto;
-  margin-top: 3.5rem;
-  border-radius: 0.7rem;
-  border: 0.5px solid rgba(255,255,255,0.35);
+  margin-top: 7rem;
+  border-radius: 1rem;
+  border: 0.5px solid rgba(255,255,255,0.3);
 
   > * {
     /* 
@@ -105,27 +97,27 @@ div.weather-container {
     search button margin left + 
     search button width  
     */
-    width: calc(25rem + 0.8rem + 2rem);
-    padding: 0 1rem;
+    width: calc(50rem + 1.6rem + 3rem);
+    padding: 0 2rem;
     text-align: left;
   }
 
   > :first-child {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 
   > :last-child {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
 div.weather-container::before {
   content: "";
   position: absolute;
-  top: -2.5rem;;
+  top: -5rem;;
   left: 68%;
-  width: 128px;
-  height: 128px;
+  width: 256px;
+  height: 256px;
   background-image: url('./assets/sun.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -136,7 +128,7 @@ div.weather-container::before {
 
 div.weather-display-no-result
 {
-  margin-bottom: 2.73rem;
+  margin-bottom: 5.46rem;
 
   > h1 {
     color: rgba(0,0,0,0.75)
@@ -144,21 +136,21 @@ div.weather-display-no-result
 
   > h2 {
     margin-top: 0.3rem;
-    font-size: 0.7rem;
+    font-size: 1.4rem;
     color: rgba(0,0,0,0.4)
   }
 }
 
 div.weather-display-main {
-  font-size: 0.45rem;
+  font-size: 0.9rem;
   font-weight: 500;
   line-height: 1;
   > h1 {
     color: var(--search-button-light);
-    font-size: 3rem;
+    font-size: 6rem;
   }
   > h3 {
-    font-size: 0.5rem;
+    font-size: 1rem;
     color: grey;
     margin-top: 0.3rem;
   }
@@ -167,35 +159,36 @@ div.weather-display-main {
 div.weather-display-side {
   color: grey;
   display: flex;
-  width: 14rem;
+  width: 28rem;
   position: relative;
-  font-size: 0.5rem;
-  left: 11rem;
-  top: -0.55rem;
+  font-size: 1rem;
+  left: 22rem;
+  top: -1rem;
   justify-content: space-between;
   flex-direction: row-reverse;
 }
 
 div.search-history-container {
-  width: calc(25rem + 0.8rem);
+  width: calc(50rem + 1.6rem);
   background-color: rgba(255,255,255,0.2);
   border-radius: 0.7rem;
-  padding: 0;
+  padding: 0.5rem 0;
 
   > * {
-    padding: 0 0.7rem;
-    font-size: 0.5rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
   }
 
   > p {
-    margin: 0.7rem 0;
+    margin: 1rem 0;
   }
 }
 
 div.search-history-item-container {
-  width: 24.5rem;
-  height: 2rem;
-  margin: 0.5rem auto;
+  width: 49rem;
+  height: 3rem;
+  margin: 1rem auto;
+  padding: 0 1rem;
   background-color: rgba(255,255,255,0.3);
   border-radius: 0.7rem;
   display: flex;
@@ -219,8 +212,8 @@ div.search-history-item-right {
 
   > .history-button {
     display: inline-block;
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 1.4rem;
     border: none;
     align-items: center;
@@ -232,7 +225,7 @@ div.search-history-item-right {
 
       > span {
         color: grey;
-        font-size: 0.8rem;
+        font-size: 1.2rem;
       }
     }
 
