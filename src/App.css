@@ -191,3 +191,53 @@ div.search-history-container {
     margin: 0.7rem 0;
   }
 }
+
+div.search-history-item-container {
+  width: 24.5rem;
+  height: 2rem;
+  margin: 0.5rem auto;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  > button:hover {
+    cursor: pointer;
+  }
+}
+
+div.search-history-item-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  > * {
+    margin-left: 0.5rem;
+  }
+
+  > .history-button {
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 1.4rem;
+    border: none;
+    align-items: center;
+
+    > .icon-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      > span {
+        color: grey;
+        font-size: 0.8rem;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -50,11 +50,29 @@ function App() {
     }
 
     if(Object.keys(result).length !== 0) {
-      // const data = getWeather()
-      // setWeather(data)
       getWeather()
     }
   }, [result])
+
+  useEffect(() => {
+    if(Object.keys(weather).length !== 0) {
+      setHistory(
+        [
+          weather,
+          ...history
+        ]
+      )
+    }
+
+  }, [weather])
+
+  // make history array to contain at most 5 items
+  useEffect(() => {
+    if(history.length > 5) {
+      const newHistory = history.slice(0, 5)
+      setHistory([...newHistory])
+    }
+  }, [history])
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value)
@@ -66,6 +84,15 @@ function App() {
     // console.log(filteredResults[0])
     filteredResult ? setResult(filteredResult) : setResult({})
     // console.log(result)
+  }
+
+  const handleHistorySearch = (obj) => {
+    setWeather(obj)
+  }
+
+  const handleHistoryDelete = (id) => {
+    const newHistory = history.filter(o => o.id !== id)
+    setHistory(newHistory)
   }
 
   useEffect(() => {
@@ -102,7 +129,11 @@ function App() {
           result={result} 
           weather={weather}
         />
-        <SearchHistory />
+        <SearchHistory 
+          history={history}
+          handleHistorySearch={handleHistorySearch}
+          handleHistoryDelete={handleHistoryDelete}
+        />
       </Weather>
     </div>
   );

@@ -24,7 +24,7 @@ const WeatherResult = ({ result, weather }) => {
             L:&nbsp;{Math.round(weather.main?.temp_max)}&deg;&nbsp;
           </span>
         </p>
-        <h3>{weather.name}&#44;&nbsp;{result.cca2}</h3>
+        <h3>{weather.name}&#44;&nbsp;{weather.sys?.country}</h3>
       </div>
       <div className="weather-display-side">
         <p>Clouds: {weather.clouds?.all}%</p>
