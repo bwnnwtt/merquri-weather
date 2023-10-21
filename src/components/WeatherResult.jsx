@@ -1,49 +1,13 @@
-import { useEffect, useState } from "react"
-import formatDate from "../utils/formatDate"
+const WeatherResult = ({ result, weather }) => {
 
-const WeatherResult = ({ result }) => {
-
-  const [weather, setWeather] = useState({})
-  
-  useEffect(() => {
-
-    const getWeather = async() => {
-      const lat = result.latlng[0]
-      const lon = result.latlng[1]
-      const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY
-
-      const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`)
-  
-      if(!resp.ok) {
-        throw new Error('API call failed')
-      }
-  
-      const data = await resp.json()
-
-      const date = new Date(data.dt * 1000)
-      const formattedDate = formatDate(date)
-      const formattedTime = date
-                              .toLocaleTimeString()
-                              .replace(' ', '')
-                              .toLowerCase()
-
-      console.log(formattedDate, formattedTime)
-      data.datetime = `${formattedDate} ${formattedTime}`;
-
-      console.log(data)
-      setWeather(data)
-    }
-
-    if(Object.keys(result).length !== 0) {
-      // const data = getWeather()
-      // setWeather(data)
-      getWeather()
-    }
-  }, [result])
-  
   if(Object.keys(result).length === 0) return (
-    <div>
-      No result
+    <div className="weather-display-no-result">
+      <h1>
+        No result ...
+      </h1>
+      <h2>
+        Enter country in search bar to start searching
+      </h2>
     </div>
   )
     

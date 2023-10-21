@@ -3,12 +3,52 @@ import './App.css';
 import Search from './components/Search';
 import Weather from './components/Weather';
 import WeatherResult from './components/WeatherResult';
+import SearchHistory from './components/SearchHistory';
+import formatDate from './utils/formatDate';
 
 function App() {
 
   const [countries, setCountries] = useState([])
   const [search, setSearch] = useState('')
   const [result, setResult] = useState({})
+  const [weather, setWeather] = useState({})
+  const [history, setHistory] = useState([])
+  
+  useEffect(() => {
+
+    const getWeather = async() => {
+      const lat = result.latlng[0]
+      const lon = result.latlng[1]
+      const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY
+
+      const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`)
+  
+      if(!resp.ok) {
+        throw new Error('API call failed')
+      }
+  
+      const data = await resp.json()
+
+      const date = new Date(data.dt * 1000)
+      const formattedDate = formatDate(date)
+      const formattedTime = date
+                              .toLocaleTimeString()
+                              .replace(' ', '')
+                              .toLowerCase()
+
+      console.log(formattedDate, formattedTime)
+      data.datetime = `${formattedDate} ${formattedTime}`;
+
+      console.log(data)
+      setWeather(data)
+    }
+
+    if(Object.keys(result).length !== 0) {
+      // const data = getWeather()
+      // setWeather(data)
+      getWeather()
+    }
+  }, [result])
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value)
@@ -52,7 +92,11 @@ function App() {
         handleSearch={handleSearch}
       />
       <Weather>
-        <WeatherResult result={result}/>
+        <WeatherResult 
+          result={result} 
+          weather={weather}
+        />
+        <SearchHistory />
       </Weather>
     </div>
   );

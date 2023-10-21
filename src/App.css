@@ -134,6 +134,21 @@ div.weather-container::before {
   top: -1rem; */
 }
 
+div.weather-display-no-result
+{
+  margin-bottom: 2.73rem;
+
+  > h1 {
+    color: rgba(0,0,0,0.75)
+  }
+
+  > h2 {
+    margin-top: 0.3rem;
+    font-size: 0.7rem;
+    color: rgba(0,0,0,0.4)
+  }
+}
+
 div.weather-display-main {
   font-size: 0.45rem;
   font-weight: 500;
@@ -152,11 +167,27 @@ div.weather-display-main {
 div.weather-display-side {
   color: grey;
   display: flex;
-  width: 20rem;
+  width: 14rem;
   position: relative;
   font-size: 0.5rem;
-  left: 5rem;
+  left: 11rem;
   top: -0.55rem;
   justify-content: space-between;
   flex-direction: row-reverse;
+}
+
+div.search-history-container {
+  width: calc(25rem + 0.8rem);
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 0.7rem;
+  padding: 0;
+
+  > * {
+    padding: 0 0.7rem;
+    font-size: 0.5rem;
+  }
+
+  > p {
+    margin: 0.7rem 0;
+  }
 }
