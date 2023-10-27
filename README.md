@@ -1,3 +1,5 @@
+Refer to assignment details in [assignment.pdf](./assignment.pdf)
+
 View deployed project [here](https://merquri-weather.vercel.app)
 
 ## Setup the project:
